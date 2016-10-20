@@ -1,3 +1,3 @@
 console.log('Loaded!');
 var x = document.getElementById("yes");
-x.onclick = function(){ alert("hey!");};
+x.onclick = function(){ console.log('Loaded again!');};
