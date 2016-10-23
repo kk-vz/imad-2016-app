@@ -68,7 +68,7 @@ app.get('/ui/main.js', function (req, res) {
 
 app.get('/article-1', function (req, res) {
   //res.sendFile(path.join(__dirname,'ui','article-1.html'));
-  res.send(createHTML());
+  res.send(createHTML(article1));
     
 });
 
