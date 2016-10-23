@@ -98,9 +98,10 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-app.get('/article1', function (req, res) {
+app.get('/:articleName', function (req, res) {
   //res.sendFile(path.join(__dirname,'ui','article-1.html'));
-  res.send(createHTML(articles.article1));
+  var articleName= req.params.articleName;
+  res.send(createHTML(articles[articleName]));
     
 });
 
