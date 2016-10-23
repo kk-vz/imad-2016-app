@@ -5,21 +5,53 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var article1 ={
-    title:"Article-1|KK",
-    heading:"Article One",
-    date:"Oct 24 2016",
-    content:`
-           <p>
-              Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.
-           </p>
-           <p>
-              Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.
-           </p>
-           <p>
-              Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.
-           </p>
-            `
+
+var articles = {
+    article1:{
+                title:"Article-1|KK",
+                heading:"Article One",
+                date:"Oct 24 2016",
+                content:`
+                       <p>
+                          Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.
+                       </p>
+                       <p>
+                          Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.
+                       </p>
+                       <p>
+                          Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.
+                       </p>`
+                },
+    article2:{
+                title:"Article-2|KK",
+                heading:"Article Two",
+                date:"Oct 22 2016",
+                content:`
+                       <p>
+                          Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.
+                       </p>
+                       <p>
+                          Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.
+                       </p>
+                       <p>
+                          Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.
+                       </p>`
+                },
+    article3:{
+                title:"Article-3|KK",
+                heading:"Article Three",
+                date:"Oct 23 2016",
+                content:`
+                       <p>
+                          Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.
+                       </p>
+                       <p>
+                          Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.
+                       </p>
+                       <p>
+                          Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.Article one.
+                       </p>`
+                }
 };
 function createHTML(data){
     var htmlTemplate = `
@@ -66,9 +98,9 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-app.get('/article-1', function (req, res) {
+app.get('/article1', function (req, res) {
   //res.sendFile(path.join(__dirname,'ui','article-1.html'));
-  res.send(createHTML(article1));
+  res.send(createHTML(${articles.article1}));
     
 });
 
