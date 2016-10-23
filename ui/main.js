@@ -11,7 +11,7 @@ function moveRight(){
 x.onclick = function(){ 
     setInterval(moveRight,200);
 };
-yes.onclick = function(){
+y.onclick = function(){
     var req = new XMLHttpRequest();
    
     req.onreadystatechange = function(){
