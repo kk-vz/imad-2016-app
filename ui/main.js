@@ -18,6 +18,7 @@ y.onclick = function(){
         if(req.readystate == XMLHttpRequest.DONE){
             if(req.status == 200){
                 var counter = req.responseText;
+                console.log(counter.toString());
                 z.innerHTML = counter.toString();
             }
         }
